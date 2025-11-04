@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import AISearch from "@/components/AISearch";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   const featuredServices = [
@@ -46,51 +45,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/azo-print-holborn-london.jpg"
-            alt="Azo Print storefront in Holborn, London"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-            quality={90}
-          />
-          {/* Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-slate/85 via-brand-dark-slate/75 to-brand-dark-slate/85"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-              Professional Print Services
-              <span className="block text-white mt-2">in the Heart of London</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
-              Quality printing solutions for businesses of all sizes. From business cards to large format prints, we deliver excellence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/services"
-                className="bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg shadow-lg"
-              >
-                View Our Services
-              </Link>
-              <Link
-                href="/contact"
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-brand-dark-slate transition-colors text-lg shadow-lg"
-              >
-                Get a Quote
-              </Link>
-            </div>
-            <AISearch />
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Parallax */}
+      <HeroSection />
 
       {/* Featured Services */}
       <section className="py-20 bg-white">
