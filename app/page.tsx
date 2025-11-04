@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AISearch from "@/components/AISearch";
 
 export default function Home() {
   const featuredServices = [
@@ -69,6 +70,7 @@ export default function Home() {
                 Get a Quote
               </Link>
             </div>
+            <AISearch />
           </div>
         </div>
       </section>
