@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
@@ -29,17 +30,17 @@ export default function Home() {
     {
       title: "Corporate Stationery",
       category: "Stationery",
-      image: "/api/placeholder/400/300",
+      image: "/corporate-stationery.png",
     },
     {
       title: "Event Posters",
       category: "Posters",
-      image: "/api/placeholder/400/300",
+      image: "/event-posters.png",
     },
     {
-      title: "Product Catalogues",
+      title: "Book Binding",
       category: "Printing",
-      image: "/api/placeholder/400/300",
+      image: "/custom-binding.png",
     },
   ];
 
@@ -104,10 +105,14 @@ export default function Home() {
                 key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
               >
-                <div className="aspect-w-16 aspect-h-12 bg-brand-gainsboro relative h-64">
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand-white-smoke to-brand-gainsboro">
-                    <span className="text-brand-light-slate text-sm">Portfolio Image</span>
-                  </div>
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
                   <span className="text-sm text-brand-dim-gray uppercase tracking-wide">
