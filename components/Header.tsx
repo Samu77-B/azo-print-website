@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -12,29 +13,36 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-gray-900">Azo Print</span>
+            <Image
+              src="/logo.png"
+              alt="Azo Print Logo"
+              width={150}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/" className="text-brand-dark-slate hover:text-brand-dodger-blue transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/services" className="text-brand-dark-slate hover:text-brand-dodger-blue transition-colors">
               Services
             </Link>
-            <Link href="/portfolio" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/portfolio" className="text-brand-dark-slate hover:text-brand-dodger-blue transition-colors">
               Portfolio
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/about" className="text-brand-dark-slate hover:text-brand-dodger-blue transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/contact" className="text-brand-dark-slate hover:text-brand-dodger-blue transition-colors">
               Contact
             </Link>
             <Link 
               href="/shop" 
-              className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors"
+              className="bg-brand-dodger-blue text-white px-6 py-2 rounded-md hover:bg-brand-dodger-blue-light transition-colors"
             >
               Shop
             </Link>
@@ -42,7 +50,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            className="md:hidden p-2 rounded-md text-brand-dark-slate hover:bg-brand-white-smoke"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -69,42 +77,42 @@ export default function Header() {
           <div className="md:hidden pb-4 space-y-2">
             <Link
               href="/"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              className="block px-3 py-2 text-brand-dark-slate hover:bg-brand-white-smoke rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              className="block px-3 py-2 text-brand-dark-slate hover:bg-brand-white-smoke rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/portfolio"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              className="block px-3 py-2 text-brand-dark-slate hover:bg-brand-white-smoke rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Portfolio
             </Link>
             <Link
               href="/about"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              className="block px-3 py-2 text-brand-dark-slate hover:bg-brand-white-smoke rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              className="block px-3 py-2 text-brand-dark-slate hover:bg-brand-white-smoke rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
               href="/shop"
-              className="block px-3 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800"
+              className="block px-3 py-2 bg-brand-dodger-blue text-white rounded-md hover:bg-brand-dodger-blue-light"
               onClick={() => setIsMenuOpen(false)}
             >
               Shop
