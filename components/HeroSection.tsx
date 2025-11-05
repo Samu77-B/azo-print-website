@@ -40,7 +40,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden -mt-20"
+      className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden -mt-20"
     >
       {/* Background Image with Parallax */}
       <div className="absolute inset-0 z-0">
