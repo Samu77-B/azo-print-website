@@ -1,4 +1,4 @@
-import Link from "next/link";
+ import Link from "next/link";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 
@@ -53,7 +53,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4 font-playfair">
               What We Do
             </h2>
             <p className="text-lg text-brand-dim-gray max-w-2xl mx-auto">
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/portfolio"
-              className="inline-block bg-brand-dark-slate text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dark-slate-light transition-colors"
+              className="inline-block bg-brand-dark-slate text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dark-slate-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
             >
               View Full Portfolio
             </Link>
@@ -147,7 +147,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg"
+            className="inline-block bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg border-2 border-transparent hover:border-brand-deep-pink"
           >
             Contact Us Today
           </Link>

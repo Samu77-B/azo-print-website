@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Aveline Line Monogram';
+  src: url('/fonts/aveline-line-monogram.woff2') format('woff2'),
+       url('/fonts/aveline-line-monogram.woff') format('woff'),
+       url('/fonts/aveline-line-monogram.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #242323;
@@ -28,3 +38,88 @@ body {
 
 /* Azo Print Brand Colors - Available as Tailwind classes */
 /* Use: bg-brand-dodger-blue, text-brand-dark-slate, etc. */
+
+.font-aveline {
+  font-family: 'Aveline Line Monogram', cursive, sans-serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Clockwise growing border animation */
+@layer components {
+  .border-grow-clockwise {
+    position: relative;
+    border: 2px solid transparent;
+  }
+  
+  .border-grow-clockwise::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from 0deg, #EC008C, #EC008C 0%, transparent 0%);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+  }
+  
+  .border-grow-clockwise:hover::before {
+    opacity: 1;
+    animation: borderGrowClockwise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  @keyframes borderGrowClockwise {
+    0% { background: conic-gradient(from 0deg, #EC008C, #EC008C 0%, transparent 0%); }
+    2.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 2.5%, transparent 2.5%); }
+    5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 5%, transparent 5%); }
+    7.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 7.5%, transparent 7.5%); }
+    10% { background: conic-gradient(from 0deg, #EC008C, #EC008C 10%, transparent 10%); }
+    12.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 12.5%, transparent 12.5%); }
+    15% { background: conic-gradient(from 0deg, #EC008C, #EC008C 15%, transparent 15%); }
+    17.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 17.5%, transparent 17.5%); }
+    20% { background: conic-gradient(from 0deg, #EC008C, #EC008C 20%, transparent 20%); }
+    22.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 22.5%, transparent 22.5%); }
+    25% { background: conic-gradient(from 0deg, #EC008C, #EC008C 25%, transparent 25%); }
+    27.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 27.5%, transparent 27.5%); }
+    30% { background: conic-gradient(from 0deg, #EC008C, #EC008C 30%, transparent 30%); }
+    32.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 32.5%, transparent 32.5%); }
+    35% { background: conic-gradient(from 0deg, #EC008C, #EC008C 35%, transparent 35%); }
+    37.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 37.5%, transparent 37.5%); }
+    40% { background: conic-gradient(from 0deg, #EC008C, #EC008C 40%, transparent 40%); }
+    42.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 42.5%, transparent 42.5%); }
+    45% { background: conic-gradient(from 0deg, #EC008C, #EC008C 45%, transparent 45%); }
+    47.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 47.5%, transparent 47.5%); }
+    50% { background: conic-gradient(from 0deg, #EC008C, #EC008C 50%, transparent 50%); }
+    52.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 52.5%, transparent 52.5%); }
+    55% { background: conic-gradient(from 0deg, #EC008C, #EC008C 55%, transparent 55%); }
+    57.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 57.5%, transparent 57.5%); }
+    60% { background: conic-gradient(from 0deg, #EC008C, #EC008C 60%, transparent 60%); }
+    62.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 62.5%, transparent 62.5%); }
+    65% { background: conic-gradient(from 0deg, #EC008C, #EC008C 65%, transparent 65%); }
+    67.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 67.5%, transparent 67.5%); }
+    70% { background: conic-gradient(from 0deg, #EC008C, #EC008C 70%, transparent 70%); }
+    72.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 72.5%, transparent 72.5%); }
+    75% { background: conic-gradient(from 0deg, #EC008C, #EC008C 75%, transparent 75%); }
+    77.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 77.5%, transparent 77.5%); }
+    80% { background: conic-gradient(from 0deg, #EC008C, #EC008C 80%, transparent 80%); }
+    82.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 82.5%, transparent 82.5%); }
+    85% { background: conic-gradient(from 0deg, #EC008C, #EC008C 85%, transparent 85%); }
+    87.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 87.5%, transparent 87.5%); }
+    90% { background: conic-gradient(from 0deg, #EC008C, #EC008C 90%, transparent 90%); }
+    92.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 92.5%, transparent 92.5%); }
+    95% { background: conic-gradient(from 0deg, #EC008C, #EC008C 95%, transparent 95%); }
+    97.5% { background: conic-gradient(from 0deg, #EC008C, #EC008C 97.5%, transparent 97.5%); }
+    100% { background: conic-gradient(from 0deg, #EC008C, #EC008C 100%, transparent 0%); }
+  }
+}

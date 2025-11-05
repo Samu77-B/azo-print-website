@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "900"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   title: "Azo Print - Professional Print Services in London",
@@ -14,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={playfairDisplay.variable}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">{children}</main>

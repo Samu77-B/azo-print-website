@@ -40,7 +40,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden -mt-20"
     >
       {/* Background Image with Parallax */}
       <div className="absolute inset-0 z-0">
@@ -56,35 +56,35 @@ export default function HeroSection() {
             alt="Azo Print storefront in Holborn, London"
             fill
             priority
-            className="object-cover"
+            className="object-cover brightness-110 contrast-105"
             sizes="100vw"
             quality={90}
           />
         </div>
         {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-slate/85 via-brand-dark-slate/75 to-brand-dark-slate/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-slate/60 via-brand-dark-slate/50 to-brand-dark-slate/60"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg font-playfair">
             Professional Print Services
             <span className="block text-white mt-2">in the Heart of London</span>
           </h1>
           <p className="text-xl sm:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
-            Quality printing solutions for businesses of all sizes. From business cards to large format prints, we deliver excellence.
+            PRINTERS / PRINTING SERVICES IN CENTRAL LONDON, HOLBORN, CAMDEN, COVENT GARDEN
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center hidden">
             <Link
               href="/services"
-              className="bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg shadow-lg"
+              className="bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg shadow-lg border-2 border-transparent hover:border-brand-deep-pink"
             >
               View Our Services
             </Link>
             <Link
               href="/contact"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-brand-dark-slate transition-colors text-lg shadow-lg"
+              className="bg-transparent border-2 border-transparent hover:border-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-brand-dark-slate transition-colors text-lg shadow-lg"
             >
               Get a Quote
             </Link>
