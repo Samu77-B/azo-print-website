@@ -128,7 +128,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/portfolio"
-              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
+              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-grow-clockwise-white"
             >
               View Full Portfolio
             </Link>
@@ -147,7 +147,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg border-2 border-transparent hover:border-brand-deep-pink"
+            className="inline-block bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg border-grow-clockwise-white"
           >
             Contact Us Today
           </Link>

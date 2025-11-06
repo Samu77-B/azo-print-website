@@ -72,24 +72,29 @@ export default function HeroSection() {
             Professional Print Services
             <span className="block text-white mt-2">in the Heart of London</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
-            PRINTERS / PRINTING SERVICES IN CENTRAL LONDON, HOLBORN, CAMDEN, COVENT GARDEN
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center hidden">
             <Link
               href="/services"
-              className="bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg shadow-lg border-2 border-transparent hover:border-brand-deep-pink"
+              className="bg-white text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors text-lg shadow-lg border-grow-clockwise-white"
             >
               View Our Services
             </Link>
             <Link
               href="/contact"
-              className="bg-transparent border-2 border-transparent hover:border-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-brand-dark-slate transition-colors text-lg shadow-lg"
+              className="bg-transparent border-2 border-transparent hover:border-white text-white px-8 py-3 rounded-md font-semibold transition-colors text-lg shadow-lg"
             >
               Get a Quote
             </Link>
           </div>
           <AISearch />
+          <div className="mt-6 flex justify-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors text-lg shadow-lg border-grow-clockwise-white"
+            >
+              Quick Quote
+            </Link>
+          </div>
         </div>
       </div>
     </section>

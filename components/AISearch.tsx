@@ -48,14 +48,11 @@ export default function AISearch() {
           type="submit"
           disabled={isSearching || !query.trim()}
           style={{ backgroundColor: '#EC008C', opacity: 1 }}
-          className="absolute right-2 px-6 py-2 text-white rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-2 border-brand-deep-pink hover:border-brand-deep-pink"
+          className="absolute right-2 px-6 py-2 text-white rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-grow-clockwise-white"
         >
           {isSearching ? "Searching..." : "Search"}
         </button>
       </div>
-      <p className="mt-3 text-sm text-brand-gainsboro text-center">
-        Powered by AI • Find the perfect printing solution for your needs
-      </p>
     </form>
   );
 }

@@ -133,13 +133,13 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block bg-brand-dodger-blue text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dodger-blue-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
+              className="inline-block bg-brand-dodger-blue text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dodger-blue-light transition-colors border-grow-clockwise-white"
             >
               Get a Quote
             </Link>
             <Link
               href="/portfolio"
-              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
+              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-grow-clockwise-white"
             >
               View Portfolio
             </Link>

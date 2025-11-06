@@ -25,24 +25,24 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-brand-deep-pink transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise">
+            <Link href="/" className="text-white transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise-white">
               Home
             </Link>
-            <Link href="/services" className="text-white hover:text-brand-deep-pink transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise">
+            <Link href="/services" className="text-white transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise-white">
               Services
             </Link>
-            <Link href="/portfolio" className="text-white hover:text-brand-deep-pink transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise">
+            <Link href="/portfolio" className="text-white transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise-white">
               Portfolio
             </Link>
-            <Link href="/about" className="text-white hover:text-brand-deep-pink transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise">
+            <Link href="/about" className="text-white transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise-white">
               About
             </Link>
-            <Link href="/contact" className="text-white hover:text-brand-deep-pink transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise">
+            <Link href="/contact" className="text-white transition-colors drop-shadow-lg px-3 py-2 rounded-md border-grow-clockwise-white">
               Contact
             </Link>
             <Link 
               href="/shop" 
-              className="bg-brand-deep-pink text-white px-6 py-2 rounded-md hover:bg-brand-deep-pink-light transition-colors shadow-lg border-2 border-transparent hover:border-brand-deep-pink"
+              className="bg-brand-deep-pink text-white px-6 py-2 rounded-md hover:bg-brand-deep-pink-light transition-colors shadow-lg border-grow-clockwise-white"
             >
               Print
             </Link>
@@ -77,42 +77,42 @@ export default function Header() {
           <div className="md:hidden pb-4 space-y-2 bg-brand-dark-slate/90 backdrop-blur-md rounded-lg mt-2 p-2">
             <Link
               href="/"
-              className="block px-3 py-2 text-white hover:text-brand-deep-pink hover:bg-white/20 rounded-md transition-colors border-grow-clockwise"
+              className="block px-3 py-2 text-white hover:bg-white/20 rounded-md transition-colors border-grow-clockwise-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className="block px-3 py-2 text-white hover:text-brand-deep-pink hover:bg-white/20 rounded-md transition-colors border-grow-clockwise"
+              className="block px-3 py-2 text-white hover:bg-white/20 rounded-md transition-colors border-grow-clockwise-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/portfolio"
-              className="block px-3 py-2 text-white hover:text-brand-deep-pink hover:bg-white/20 rounded-md transition-colors border-grow-clockwise"
+              className="block px-3 py-2 text-white hover:bg-white/20 rounded-md transition-colors border-grow-clockwise-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Portfolio
             </Link>
             <Link
               href="/about"
-              className="block px-3 py-2 text-white hover:text-brand-deep-pink hover:bg-white/20 rounded-md transition-colors border-grow-clockwise"
+              className="block px-3 py-2 text-white hover:bg-white/20 rounded-md transition-colors border-grow-clockwise-white"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2 text-white hover:text-brand-deep-pink hover:bg-white/20 rounded-md transition-colors border-grow-clockwise"
+              className="block px-3 py-2 text-white hover:bg-white/20 rounded-md transition-colors border-grow-clockwise-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
               href="/shop"
-              className="block px-3 py-2 bg-brand-deep-pink text-white rounded-md hover:bg-brand-deep-pink-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
+              className="block px-3 py-2 bg-brand-deep-pink text-white rounded-md hover:bg-brand-deep-pink-light transition-colors border-grow-clockwise-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Print
