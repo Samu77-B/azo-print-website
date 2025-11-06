@@ -26,6 +26,7 @@ const config: Config = {
           "white-smoke": "#F0F0F0",
           snow: "#FCFCFC",
           magenta: "#FF00FF",
+          "lavender-blue": "#8587c3",
         },
       },
     },

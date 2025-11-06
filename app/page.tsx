@@ -67,7 +67,7 @@ export default function Home() {
                 href={service.href}
                 className="group bg-brand-white-smoke rounded-lg p-6 hover:shadow-lg transition-all hover:-translate-y-1"
               >
-                <h3 className="text-xl font-semibold text-brand-dark-slate mb-2 group-hover:text-brand-dodger-blue">
+                <h3 className="text-xl font-semibold text-brand-dark-slate mb-2 group-hover:text-brand-dodger-blue font-playfair">
                   {service.name}
                 </h3>
                 <p className="text-brand-dim-gray">{service.description}</p>
@@ -89,13 +89,13 @@ export default function Home() {
       </section>
 
       {/* Portfolio Highlights */}
-      <section className="py-20 bg-brand-white-smoke">
+      <section className="py-20 bg-brand-light-slate">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-playfair">
               Our Work
             </h2>
-            <p className="text-lg text-brand-dim-gray max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Showcasing quality and attention to detail in every project
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
                   <span className="text-sm text-brand-dim-gray uppercase tracking-wide">
                     {item.category}
                   </span>
-                  <h3 className="text-xl font-semibold text-brand-dark-slate mt-2">
+                  <h3 className="text-xl font-semibold text-brand-dark-slate mt-2 font-playfair">
                     {item.title}
                   </h3>
                 </div>
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/portfolio"
-              className="inline-block bg-brand-dark-slate text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dark-slate-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
+              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
             >
               View Full Portfolio
             </Link>
@@ -139,7 +139,7 @@ export default function Home() {
       {/* Call to Action */}
       <section className="py-20 bg-brand-dark-slate text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-playfair">
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-brand-gainsboro mb-8">

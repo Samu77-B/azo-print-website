@@ -47,7 +47,8 @@ export default function AISearch() {
         <button
           type="submit"
           disabled={isSearching || !query.trim()}
-          className="absolute right-2 px-6 py-2 bg-white text-brand-dark-slate rounded-md font-semibold hover:bg-brand-white-smoke transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-2 border-transparent hover:border-brand-deep-pink"
+          style={{ backgroundColor: '#EC008C', opacity: 1 }}
+          className="absolute right-2 px-6 py-2 text-white rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed border-2 border-brand-deep-pink hover:border-brand-deep-pink"
         >
           {isSearching ? "Searching..." : "Search"}
         </button>

@@ -87,7 +87,7 @@ export default function ServicesPage() {
       <section className="bg-gradient-to-br from-brand-dark-slate via-brand-dark-slate-light to-brand-dark-slate text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-playfair">
               Our Services
             </h1>
             <p className="text-xl text-brand-gainsboro max-w-3xl mx-auto">
@@ -108,7 +108,7 @@ export default function ServicesPage() {
                 className="group bg-white border border-brand-gainsboro rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h2 className="text-2xl font-semibold text-brand-dark-slate mb-3 group-hover:text-brand-dodger-blue">
+                <h2 className="text-2xl font-semibold text-brand-dark-slate mb-3 group-hover:text-brand-dodger-blue font-playfair">
                   {service.name}
                 </h2>
                 <p className="text-brand-dim-gray mb-4">{service.description}</p>
@@ -124,7 +124,7 @@ export default function ServicesPage() {
       {/* Call to Action */}
       <section className="py-20 bg-brand-white-smoke">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4 font-playfair">
             Need Help Choosing?
           </h2>
           <p className="text-xl text-brand-dim-gray mb-8">
@@ -139,7 +139,7 @@ export default function ServicesPage() {
             </Link>
             <Link
               href="/portfolio"
-              className="inline-block bg-white border-2 border-transparent hover:border-brand-deep-pink text-brand-dark-slate px-8 py-3 rounded-md font-semibold hover:bg-brand-white-smoke transition-colors"
+              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-2 border-transparent hover:border-brand-deep-pink"
             >
               View Portfolio
             </Link>

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Azo Print</h3>
+            <h3 className="text-2xl font-bold mb-4 font-playfair">Azo Print</h3>
             <p className="text-brand-gainsboro mb-4">
               Professional printing services in the heart of London. Quality prints for your business needs.
             </p>
@@ -18,7 +18,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 font-playfair">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-brand-gainsboro hover:text-white transition-colors">
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4 font-playfair">Contact</h4>
             <ul className="space-y-2 text-brand-gainsboro">
               <li>London, UK</li>
               <li>
