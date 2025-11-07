@@ -5,24 +5,64 @@ import HeroSection from "@/components/HeroSection";
 export default function Home() {
   const featuredServices = [
     {
-      name: "Business Cards",
-      description: "Professional business cards that make a lasting impression",
-      href: "/services/business-cards",
+      name: "Exhibition & Display",
+      description: "Professional exhibition stands and display solutions for events and trade shows",
+      href: "/services/exhibition-display",
     },
     {
       name: "Flyers & Leaflets",
-      description: "Eye-catching promotional materials for your business",
+      description: "Eye-catching promotional materials designed to grab attention and drive results",
       href: "/services/flyers-leaflets",
     },
     {
-      name: "Large Format Printing",
-      description: "Posters, banners, and signage for maximum impact",
-      href: "/services/large-format",
+      name: "Business Stationery",
+      description: "Premium business cards and corporate stationery that represents your brand professionally",
+      href: "/services/stationery-business-cards",
     },
     {
-      name: "Book Binding",
-      description: "Professional binding services for reports and publications",
+      name: "Cards & Postcards",
+      description: "Custom greeting cards, invitations, and postcards for personal and business use",
+      href: "/services/cards-postcards",
+    },
+    {
+      name: "Posters & Large Prints",
+      description: "Large format printing for posters, banners, and signage that makes a statement",
+      href: "/services/posters-large-prints",
+    },
+    {
+      name: "Book Binding & Slip Cases",
+      description: "Professional book binding services and custom slip cases for reports and publications",
       href: "/services/book-binding",
+    },
+    {
+      name: "Printing & Copying",
+      description: "High-quality printing and copying services for all your document needs",
+      href: "/services/printing-copying",
+    },
+    {
+      name: "Mugs, T-Shirts, Bags & More",
+      description: "Custom branded merchandise including mugs, t-shirts, bags, and promotional items",
+      href: "/services/mugs-tshirts",
+    },
+    {
+      name: "Stands & Banners",
+      description: "Exhibition stands, banners, and display materials for events and trade shows",
+      href: "/services/stands-banners",
+    },
+    {
+      name: "Special Prints",
+      description: "Specialty printing services including foiling, embossing, and unique finishes",
+      href: "/services/special-prints",
+    },
+    {
+      name: "Documents & Reports",
+      description: "Professional document printing and report binding services for businesses",
+      href: "/services/documents-reports",
+    },
+    {
+      name: "Graphic Design",
+      description: "Expert graphic design services to bring your vision to life",
+      href: "/services/graphic-design",
     },
   ];
 
@@ -53,7 +93,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4 font-playfair">
+            <h2 className="text-5xl sm:text-6xl font-bold text-brand-dark-slate mb-4 font-playfair">
               What We Do
             </h2>
             <p className="text-lg text-brand-dim-gray max-w-2xl mx-auto">
@@ -92,7 +132,7 @@ export default function Home() {
       <section className="py-20 bg-brand-light-slate">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-playfair">
+            <h2 className="text-5xl sm:text-6xl font-bold text-white mb-4 font-playfair">
               Our Work
             </h2>
             <p className="text-lg text-white max-w-2xl mx-auto">
@@ -136,10 +176,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Printing, Binding, Finishing Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-5xl sm:text-6xl font-bold text-brand-dark-slate mb-6 font-playfair">
+              Printing, Binding, Finishing
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-4">
+              <p className="text-lg text-brand-dim-gray leading-relaxed">
+                Everything else from the exciting world of print! We're the experts! We say that not because we're good at printing pretty much everything, but we've gathered years of knowledge and can help you decide the best way to bring your work to life!
+              </p>
+              <p className="text-lg text-brand-dim-gray leading-relaxed">
+                We're here to offer you top quality printing services and the best advice from our experts!
+              </p>
+              <p className="text-lg text-brand-dim-gray leading-relaxed">
+                From our Central London offices, in Holborn and Covent Garden we can print and finish everything from a Business Card to a full Exhibition.
+              </p>
+              <p className="text-lg text-brand-dim-gray mb-10 max-w-4xl mx-auto">
+              Our full service range is too extensive to list here, but amongst some of the things we offer as a same day service are: <strong>Portfolio Printing</strong>, <strong>Brochures & Booklets</strong>, <strong>Letterheads & Stationery</strong>, <strong>Business Cards</strong>, <strong>Book Binding</strong>, <strong>Custom Case Binding</strong>, <strong>Architectural Prints</strong>, <strong>Dry Mounting</strong>, <strong>Laminating</strong>, <strong>Banner Stands & Exhibition Graphics</strong>, <strong>Large Format Printing</strong>, <strong>Dissertation Binding</strong>, <strong>Scanning</strong>, <strong>Postcards</strong>, <strong>Flyers</strong>, <strong>Wallpapers & Murals</strong>, <strong>Acetate Prints</strong>, <strong>Window Graphics and Vinyl Lettering</strong>, <strong>Fluorescent Paper Prints</strong>, <strong>Photo Printing</strong>, <strong>Personalised Mugs & Gifts</strong>, <strong>T-Shirt, Clothing & Workwear Printing</strong>, <strong>White Ink Prints</strong>, <strong>Coloured Foiling</strong>, <strong>Seeded Paper Printing</strong>, <strong>Die Cutting</strong>, <strong>Stickers & Packaging</strong>.
+            </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-20 bg-brand-dark-slate text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-playfair">
+          <h2 className="text-5xl sm:text-6xl font-bold mb-4 font-playfair">
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-brand-gainsboro mb-8">

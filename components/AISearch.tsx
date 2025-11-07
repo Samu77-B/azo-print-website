@@ -41,7 +41,7 @@ export default function AISearch() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ask AI: What printing services do you offer?"
+          placeholder="Ask Azo"
           className="w-full pl-12 pr-32 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-brand-gainsboro focus:outline-none focus:ring-2 focus:ring-brand-dodger-blue/50 focus:border-transparent"
         />
         <button
@@ -53,6 +53,7 @@ export default function AISearch() {
           {isSearching ? "Searching..." : "Search"}
         </button>
       </div>
+      <p className="text-center mt-2 text-white/80 text-sm">AI Powered Search</p>
     </form>
   );
 }

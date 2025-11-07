@@ -62,13 +62,13 @@ export default function HeroSection() {
           />
         </div>
         {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-slate/60 via-brand-dark-slate/50 to-brand-dark-slate/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-slate/75 via-brand-dark-slate/65 to-brand-dark-slate/75"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg font-playfair">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold mb-6 text-white drop-shadow-lg font-playfair">
             Professional Print Services
             <span className="block text-white mt-2">in the Heart of London</span>
           </h1>

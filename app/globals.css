@@ -22,6 +22,29 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Heming Variable';
+  src: url('/fonts/Heming Variable.ttf') format('truetype'),
+       url('/fonts/HemingVariable.woff2') format('woff2'),
+       url('/fonts/Heming-Variable.woff2') format('woff2'),
+       url('/fonts/HemingVariable.woff') format('woff'),
+       url('/fonts/Heming-Variable.woff') format('woff'),
+       url('/fonts/HemingVariable.ttf') format('truetype'),
+       url('/fonts/Heming-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reglo';
+  src: url('/fonts/Reglo-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #242323;
@@ -40,9 +63,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Apply Oranienbaum font to all headings */
+/* Apply Reglo font to all headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Reglo', sans-serif;
 }
 
 @layer utilities {
@@ -59,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .font-playfair {
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Reglo', sans-serif;
 }
 
 /* Clockwise growing border animation */
