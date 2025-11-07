@@ -48,14 +48,14 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Plus Sign in Circle */}
           <button
-            className="md:hidden p-2 rounded-md text-white hover:bg-white/20 transition-colors drop-shadow-lg"
+            className="md:hidden h-[60px] w-[60px] rounded-full bg-white border border-black flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 drop-shadow-lg"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
             <svg
-              className="h-6 w-6"
+              className={`h-7 w-7 text-black transition-transform duration-300 ${isMenuOpen ? 'rotate-45' : ''}`}
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -63,18 +63,19 @@ export default function Header() {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
+              <path d="M12 4v16M4 12h16" />
             </svg>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2 bg-brand-dark-slate/90 backdrop-blur-md rounded-lg mt-2 p-2">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen
+              ? 'max-h-96 opacity-100 pb-4 space-y-2 bg-brand-dark-slate/90 backdrop-blur-md rounded-lg mt-2 p-2 pointer-events-auto'
+              : 'max-h-0 opacity-0 pointer-events-none'
+          }`}
+        >
             <Link
               href="/"
               className="block px-3 py-2 text-white hover:bg-white/20 rounded-md transition-colors border-grow-clockwise-white"
@@ -118,7 +119,6 @@ export default function Header() {
               Print
             </Link>
           </div>
-        )}
       </nav>
     </header>
   );
