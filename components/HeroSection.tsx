@@ -87,14 +87,6 @@ export default function HeroSection() {
             </Link>
           </div>
           <AISearch />
-          <div className="mt-6 flex justify-center">
-            <Link
-              href="/contact"
-              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors text-lg shadow-lg border-grow-clockwise-white"
-            >
-              Quick Quote
-            </Link>
-          </div>
         </div>
       </div>
     </section>
