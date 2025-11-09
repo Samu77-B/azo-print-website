@@ -1,68 +1,126 @@
- import Link from "next/link";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import type { LucideIcon } from "lucide-react";
+import {
+  BadgePercent,
+  BookOpen,
+  Brush,
+  FileText,
+  Gift,
+  IdCard,
+  Layers,
+  Palette,
+  Printer,
+  ShoppingBag,
+  SlidersHorizontal,
+  SquareStack,
+} from "lucide-react";
+
+import bookBindingImage from "@/images/services images/book binding.png";
+import cardsPostcardsImage from "@/images/services images/cards postcards.png";
+import documentsReportsImage from "@/images/services images/documents reports.png";
+import flyersLeafletsImage from "@/images/services images/flyers leaflets.png";
+import graphicDesignImage from "@/images/services images/graphic design.png";
+import mugsTshirtsImage from "@/images/services images/mugs and tshirts.png";
+import postersLargePrintsImage from "@/images/services images/posters large prints.png";
+import printingCopyingImage from "@/images/services images/printing copying.png";
+import specialPrintsFoilingEtcImage from "@/images/services images/special prints foiling etc.png";
+import standsBannersImage from "@/images/services images/stands and banners.png";
+import stationaryBusinessCardsImage from "@/images/services images/stationary business cards.png";
+import exhibitionDisplayImage from "@/images/services images/Exhibition & Display.png";
 
 export default function Home() {
-  const featuredServices = [
+  const featuredServices: {
+    name: string;
+    description: string;
+    href: string;
+    icon: LucideIcon;
+    image?: StaticImageData;
+  }[] = [
     {
       name: "Exhibition & Display",
       description: "Professional exhibition stands and display solutions for events and trade shows",
       href: "/services/exhibition-display",
+      icon: SquareStack,
+      image: exhibitionDisplayImage,
     },
     {
       name: "Flyers & Leaflets",
       description: "Eye-catching promotional materials designed to grab attention and drive results",
       href: "/services/flyers-leaflets",
+      icon: Layers,
+      image: flyersLeafletsImage,
     },
     {
       name: "Business Stationery",
       description: "Premium business cards and corporate stationery that represents your brand professionally",
       href: "/services/stationery-business-cards",
+      icon: IdCard,
+      image: stationaryBusinessCardsImage,
     },
     {
       name: "Cards & Postcards",
       description: "Custom greeting cards, invitations, and postcards for personal and business use",
       href: "/services/cards-postcards",
+      icon: Gift,
+      image: cardsPostcardsImage,
     },
     {
       name: "Posters & Large Prints",
       description: "Large format printing for posters, banners, and signage that makes a statement",
       href: "/services/posters-large-prints",
+      icon: Brush,
+      image: postersLargePrintsImage,
     },
     {
       name: "Book Binding & Slip Cases",
       description: "Professional book binding services and custom slip cases for reports and publications",
       href: "/services/book-binding",
+      icon: BookOpen,
+      image: bookBindingImage,
     },
     {
       name: "Printing & Copying",
       description: "High-quality printing and copying services for all your document needs",
       href: "/services/printing-copying",
+      icon: Printer,
+      image: printingCopyingImage,
     },
     {
       name: "Mugs, T-Shirts, Bags & More",
       description: "Custom branded merchandise including mugs, t-shirts, bags, and promotional items",
       href: "/services/mugs-tshirts",
+      icon: ShoppingBag,
+      image: mugsTshirtsImage,
     },
     {
       name: "Stands & Banners",
       description: "Exhibition stands, banners, and display materials for events and trade shows",
       href: "/services/stands-banners",
+      icon: SlidersHorizontal,
+      image: standsBannersImage,
     },
     {
       name: "Special Prints",
       description: "Specialty printing services including foiling, embossing, and unique finishes",
       href: "/services/special-prints",
+      icon: Palette,
+      image: specialPrintsFoilingEtcImage,
     },
     {
       name: "Documents & Reports",
       description: "Professional document printing and report binding services for businesses",
       href: "/services/documents-reports",
+      icon: FileText,
+      image: documentsReportsImage,
     },
     {
       name: "Graphic Design",
       description: "Expert graphic design services to bring your vision to life",
       href: "/services/graphic-design",
+      icon: BadgePercent,
+      image: graphicDesignImage,
     },
   ];
 
@@ -89,6 +147,24 @@ export default function Home() {
       {/* Hero Section with Parallax */}
       <HeroSection />
 
+      {/* Quick Quote CTA */}
+      <section className="py-16 bg-gradient-to-br from-brand-white-smoke via-[#e4dfe3] to-[#d4ccd2]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-5xl sm:text-6xl font-bold text-brand-dark-slate mb-4 font-playfair">
+            Need a Quick Quote?
+          </h2>
+          <p className="text-lg text-brand-dim-gray mb-8">
+            Tell us about your project and we&apos;ll get back to you with pricing and timelines right away.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors text-lg shadow-lg border-grow-clockwise-white"
+          >
+            Quick Quote
+          </Link>
+        </div>
+      </section>
+
       {/* Featured Services */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,15 +181,35 @@ export default function Home() {
               <Link
                 key={service.name}
                 href={service.href}
-                className="group bg-brand-white-smoke rounded-lg p-6 hover:shadow-lg transition-all hover:-translate-y-1"
+                className="group bg-brand-white-smoke rounded-lg overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
               >
-                <h3 className="text-xl font-semibold text-brand-dark-slate mb-2 group-hover:text-brand-dodger-blue font-playfair">
-                  {service.name}
-                </h3>
-                <p className="text-brand-dim-gray">{service.description}</p>
-                <span className="inline-block mt-4 text-brand-dark-slate font-medium group-hover:translate-x-1 transition-transform">
-                  Learn more →
-                </span>
+                <div className="relative h-48 w-full bg-white">
+                  {service.image ? (
+                    <Image
+                      src={service.image}
+                      alt={service.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-brand-white-smoke">
+                      <service.icon
+                        className="h-14 w-14 text-brand-dodger-blue"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-brand-dark-slate mb-2 group-hover:text-brand-dodger-blue font-playfair transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="text-brand-dim-gray">{service.description}</p>
+                  <span className="inline-block mt-4 text-brand-dark-slate font-medium group-hover:translate-x-1 transition-transform">
+                    Learn more →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
@@ -129,13 +225,13 @@ export default function Home() {
       </section>
 
       {/* Portfolio Highlights */}
-      <section className="py-20 bg-brand-light-slate">
+      <section className="py-20 bg-gradient-to-br from-brand-white-smoke via-[#e4dfe3] to-[#d4ccd2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white mb-4 font-playfair">
+            <h2 className="text-5xl sm:text-6xl font-bold text-brand-dark-slate mb-4 font-playfair">
               Our Work
             </h2>
-            <p className="text-lg text-white max-w-2xl mx-auto">
+            <p className="text-lg text-brand-dim-gray max-w-2xl mx-auto">
               Showcasing quality and attention to detail in every project
             </p>
           </div>

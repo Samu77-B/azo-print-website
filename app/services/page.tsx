@@ -1,77 +1,124 @@
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
+import {
+  FileText,
+  Layers,
+  IdCard,
+  Gift,
+  Image as ImageIcon,
+  BookOpen,
+  Printer,
+  Shirt,
+  SlidersHorizontal,
+  Sparkles,
+  Scissors,
+  PenTool,
+} from "lucide-react";
 
-const services = [
+import bookBindingImage from "@/images/services images/book binding.png";
+import cardsPostcardsImage from "@/images/services images/cards postcards.png";
+import documentsReportsImage from "@/images/services images/documents reports.png";
+import flyersLeafletsImage from "@/images/services images/flyers leaflets.png";
+import mugsTshirtsImage from "@/images/services images/mugs and tshirts.png";
+import postersLargePrintsImage from "@/images/services images/posters large prints.png";
+import printingCopyingImage from "@/images/services images/printing copying.png";
+import specialPrintsFoilingEtcImage from "@/images/services images/special prints foiling etc.png";
+import standsBannersImage from "@/images/services images/stands and banners.png";
+import stationaryBusinessCardsImage from "@/images/services images/stationary business cards.png";
+import finishingImage from "@/images/services images/finishing.png";
+import graphicDesignImage from "@/images/services images/graphic design.png";
+
+const services: {
+  name: string;
+  slug: string;
+  description: string;
+  icon: LucideIcon;
+  image?: StaticImageData;
+}[] = [
   {
     name: "Documents & Reports",
     slug: "documents-reports",
     description: "Professional document printing and report binding services for businesses.",
-    icon: "📄",
+    icon: FileText,
+    image: documentsReportsImage,
   },
   {
     name: "Flyers & Leaflets",
     slug: "flyers-leaflets",
     description: "Eye-catching promotional materials designed to grab attention and drive results.",
-    icon: "📋",
+    icon: Layers,
+    image: flyersLeafletsImage,
   },
   {
     name: "Stationery & Business Cards",
     slug: "stationery-business-cards",
     description: "Premium business cards and corporate stationery that represents your brand professionally.",
-    icon: "💼",
+    icon: IdCard,
+    image: stationaryBusinessCardsImage,
   },
   {
     name: "Cards & Postcards",
     slug: "cards-postcards",
     description: "Custom greeting cards, invitations, and postcards for personal and business use.",
-    icon: "🎴",
+    icon: Gift,
+    image: cardsPostcardsImage,
   },
   {
     name: "Posters & Large Prints",
     slug: "posters-large-prints",
     description: "Large format printing for posters, banners, and signage that makes a statement.",
-    icon: "🖼️",
+    icon: ImageIcon,
+    image: postersLargePrintsImage,
   },
   {
     name: "Book Binding",
     slug: "book-binding",
     description: "Professional book binding services for reports, catalogues, and publications.",
-    icon: "📚",
+    icon: BookOpen,
+    image: bookBindingImage,
   },
   {
     name: "Printing & Copying",
     slug: "printing-copying",
     description: "High-quality printing and copying services for all your document needs.",
-    icon: "🖨️",
+    icon: Printer,
+    image: printingCopyingImage,
   },
   {
     name: "Mugs & T-Shirts",
     slug: "mugs-tshirts",
     description: "Custom branded merchandise including mugs, t-shirts, and promotional items.",
-    icon: "☕",
+    icon: Shirt,
+    image: mugsTshirtsImage,
   },
   {
     name: "Stands & Banners",
     slug: "stands-banners",
     description: "Exhibition stands, banners, and display materials for events and trade shows.",
-    icon: "🚩",
+    icon: SlidersHorizontal,
+    image: standsBannersImage,
   },
   {
     name: "Special Prints",
     slug: "special-prints",
     description: "Specialty printing services including foiling, embossing, and unique finishes.",
-    icon: "✨",
+    icon: Sparkles,
+    image: specialPrintsFoilingEtcImage,
   },
   {
     name: "Finishing & Mounting",
     slug: "finishing-mounting",
     description: "Professional finishing services including lamination, mounting, and framing.",
-    icon: "🎨",
+    icon: Scissors,
+    image: finishingImage,
   },
   {
     name: "Graphic Design",
     slug: "graphic-design",
     description: "Expert graphic design services to bring your vision to life.",
-    icon: "🎯",
+    icon: PenTool,
+    image: graphicDesignImage,
   },
 ];
 
@@ -107,8 +154,25 @@ export default function ServicesPage() {
                 href={`/services/${service.slug}`}
                 className="group bg-white border border-brand-gainsboro rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h2 className="text-2xl font-semibold text-brand-dark-slate mb-3 group-hover:text-brand-dodger-blue font-playfair">
+                <div className="relative h-48 w-full mb-6 overflow-hidden rounded-lg bg-brand-white-smoke">
+                  {service.image ? (
+                    <Image
+                      src={service.image}
+                      alt={service.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <service.icon
+                        className="h-16 w-16 text-brand-dodger-blue"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  )}
+                </div>
+                <h2 className="text-2xl font-semibold text-brand-dark-slate mb-3 group-hover:text-brand-dodger-blue font-playfair transition-colors">
                   {service.name}
                 </h2>
                 <p className="text-brand-dim-gray mb-4">{service.description}</p>
