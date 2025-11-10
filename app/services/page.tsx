@@ -28,6 +28,7 @@ import standsBannersImage from "@/images/services images/stands and banners.png"
 import stationaryBusinessCardsImage from "@/images/services images/stationary business cards.png";
 import finishingImage from "@/images/services images/finishing.png";
 import graphicDesignImage from "@/images/services images/graphic design.png";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const services: {
   name: string;
@@ -131,85 +132,97 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-dark-slate via-brand-dark-slate-light to-brand-dark-slate text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-playfair">
-              Our Services
-            </h1>
-            <p className="text-xl text-brand-gainsboro max-w-3xl mx-auto">
-              Comprehensive printing solutions for every need. From business cards to large format prints, we deliver quality and excellence.
-            </p>
+      <RevealOnScroll direction="down">
+        <section className="bg-gradient-to-br from-brand-dark-slate via-brand-dark-slate-light to-brand-dark-slate text-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl sm:text-5xl font-bold mb-4 font-playfair">
+                Our Services
+              </h1>
+              <p className="text-xl text-brand-gainsboro max-w-3xl mx-auto">
+                Comprehensive printing solutions for every need. From business cards to large format prints, we deliver quality and excellence.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealOnScroll>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group bg-white border border-brand-gainsboro rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
-              >
-                <div className="relative h-48 w-full mb-6 overflow-hidden rounded-lg bg-brand-white-smoke">
-                  {service.image ? (
-                    <Image
-                      src={service.image}
-                      alt={service.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center">
-                      <service.icon
-                        className="h-16 w-16 text-brand-dodger-blue"
-                        aria-hidden="true"
-                      />
+      <RevealOnScroll delay={120}>
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <RevealOnScroll
+                  key={service.slug}
+                  delay={index * 90}
+                  direction={index % 3 === 0 ? "up" : index % 3 === 1 ? "none" : "down"}
+                  className="h-full"
+                >
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="group bg-white border border-brand-gainsboro rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1 h-full flex flex-col"
+                  >
+                    <div className="relative h-48 w-full mb-6 overflow-hidden rounded-lg bg-brand-white-smoke">
+                      {service.image ? (
+                        <Image
+                          src={service.image}
+                          alt={service.name}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center">
+                          <service.icon
+                            className="h-16 w-16 text-brand-dodger-blue"
+                            aria-hidden="true"
+                          />
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-                <h2 className="text-2xl font-semibold text-brand-dark-slate mb-3 group-hover:text-brand-dodger-blue font-playfair transition-colors">
-                  {service.name}
-                </h2>
-                <p className="text-brand-dim-gray mb-4">{service.description}</p>
-                <span className="inline-block text-brand-dark-slate font-medium group-hover:translate-x-1 transition-transform">
-                  Learn more →
-                </span>
-              </Link>
-            ))}
+                    <h2 className="text-2xl font-semibold text-brand-dark-slate mb-3 group-hover:text-brand-dodger-blue font-playfair transition-colors">
+                      {service.name}
+                    </h2>
+                    <p className="text-brand-dim-gray mb-4 flex-1">{service.description}</p>
+                    <span className="inline-block text-brand-dark-slate font-medium group-hover:translate-x-1 transition-transform">
+                      Learn more →
+                    </span>
+                  </Link>
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealOnScroll>
 
       {/* Call to Action */}
-      <section className="py-20 bg-brand-white-smoke">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4 font-playfair">
-            Need Help Choosing?
-          </h2>
-          <p className="text-xl text-brand-dim-gray mb-8">
-            Our expert team is here to help you find the perfect printing solution for your project.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-block bg-brand-dodger-blue text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dodger-blue-light transition-colors border-grow-clockwise-white"
-            >
-              Get a Quote
-            </Link>
-            <Link
-              href="/portfolio"
-              className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-grow-clockwise-white"
-            >
-              View Portfolio
-            </Link>
+      <RevealOnScroll delay={180}>
+        <section className="py-20 bg-brand-white-smoke">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark-slate mb-4 font-playfair">
+              Need Help Choosing?
+            </h2>
+            <p className="text-xl text-brand-dim-gray mb-8">
+              Our expert team is here to help you find the perfect printing solution for your project.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-block bg-brand-dodger-blue text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-dodger-blue-light transition-colors border-grow-clockwise-white"
+              >
+                Get a Quote
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-block bg-brand-deep-pink text-white px-8 py-3 rounded-md font-semibold hover:bg-brand-deep-pink-light transition-colors border-grow-clockwise-white"
+              >
+                View Portfolio
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealOnScroll>
     </div>
   );
 }
