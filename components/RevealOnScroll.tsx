@@ -38,6 +38,33 @@ export default function RevealOnScroll({
     const node = ref.current;
     if (!node) return;
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
+    const supportsIntersectionObserver =
+      typeof window !== 'undefined' && 'IntersectionObserver' in window;
+
+    if (!supportsIntersectionObserver) {
+      setIsVisible(true);
+      return;
+    }
+
+    const isMobileViewport =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(max-width: 768px)').matches;
+
+    const observerThreshold = isMobileViewport
+      ? Math.min(threshold, 0.05)
+      : threshold;
+
+    const rootMargin = isMobileViewport ? '0px 0px -5% 0px' : '0px 0px -10% 0px';
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -50,7 +77,7 @@ export default function RevealOnScroll({
           setIsVisible(false);
         }
       },
-      { threshold }
+      { threshold: observerThreshold, rootMargin }
     );
 
     observer.observe(node);
@@ -72,6 +99,7 @@ export default function RevealOnScroll({
       style={{ transitionDelay: `${delay}ms` }}
       className={[
         'transition-all',
+        'transform-gpu',
         durationClassName,
         'ease-out',
         'will-change-transform',
